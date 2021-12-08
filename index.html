@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="fontawesome-free-v5-web/css/all.css"> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="flex justify-center items-center box-border pt-10">
+    <div class="myWidth h-auto rounded shadow-xl box-border">
+        <div class="head flex justify-between items-center border-2 border-gray-200 rounded-t p-6">
+            <div class="flex gap-4 items-center">
+                <div class="flex">
+                    <button
+                        class="w-10 h-10 border text-center rounded-l-md text-gray-500 text-xl hover:border-black transition hover:bg-gray-100 hover:text-white flex justify-center items-center"
+                        id="left"> <i class="fas fa-angle-left"></i> </button>
+                    <button
+                        class="w-10 h-10 border text-center rounded-r-md text-gray-500 text-xl hover:border-black transition hover:bg-gray-100 hover:text-white flex justify-center items-center"
+                        id="right"><i class="fas fa-angle-right"></i></button>
+                </div>
+                <div>
+                    <button
+                        class="w-14 h-10 border border-gray-400 text-center bg-gray-400 rounded-md text-gray-500 text-sm hover:border-black transition hover:bg-gray-100 hover:text-gray-400 flex justify-center items-center"
+                        id="today">today</button>
+                </div>
+            </div>
+            <div class="flex items-center h-10">
+                <p class="text-center text-3xl pr-2" id="month"></p> <span class="text-center text-3xl"
+                    id="year"></span>
+            </div>
+            <div class="flex gap-4 items-center">
+                <div class="flex">
+                    <button class="w-16 h-10 border border-black text-center bg-black rounded-l-md text-gray-500 "
+                        id="btn-month">month
+                    </button>
+                    <button
+                        class="w-16 h-10  text-center border border-black-200 bg-white text-gray-500 hover:border-black transition hover:bg-gray-100 hover:text-white"
+                        id="btn-week">week</button>
+                    <button
+                        class="w-16 h-10  text-center border border-black-200 bg-white rounded-r-md text-gray-500 hover:border-black transition hover:bg-gray-100 hover:text-white"
+                        id="btn-day">day</button>
+                </div>
+            </div>
+        </div>
+        <div class="weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+        <div class="alldays">
+            <div class="days">
+                <span class="date">1</span>
+
+
+                <!-- <span class="hero-event">
+                        <label id="your-event">Event&nbsp;:&nbsp;2</label>
+                        <button id="btn-show">
+                            <i id="dropDown" class="fa fa-caret-right" aria-hidden="true"></i>
+                            <span class="show">    
+                                <span class="show-event" style="background-color: #F00000">
+                                    <label id="titleEvent"><span class="flex text-xs">1&nbsp;:&nbsp;Birthday Party</span></label>                               
+                                    <i id="showRight" class="fa fa-caret-right" aria-hidden="true"></i>
+                                    <span class="show-content" style="background-color: #F00000">
+                                        Title : Birthday Party <br><br>
+                                        Sub Title : Co-worker <br><br>
+                                        Start DateTime : Wed Dec 01 2021 07:00:00 GMT+0700 (Indochina Time) <br><br>
+                                        End Date Time : Invalid Date <br><br>
+                                        Color: #F00000
+                                    </span>
+                                </span>	    
+                            </span>
+                        </button>
+                    </span> -->
+                
+
+                <span class="even" style="background-color: red; width: 190%; margin-left: 5%;">Date
+                    <span class="show-content" style="background-color: #F00000;">
+                        Title : Birthday Party <br><br>
+                        Sub Title : Co-worker <br><br>
+                        Start DateTime : Wed Dec 01 2021 07:00:00 GMT+0700 (Indochina Time) <br><br>
+                        End Date Time : Invalid Date <br><br>
+                        Color: #F00000
+                    </span>
+                </span>
+
+
+                <span class="even" style="background-color: green;">Hello           
+                    <span class="show-content" style="background-color: green;">
+                        Title : Birthday Party <br><br>
+                        Sub Title : Co-worker <br><br>
+                        Start DateTime : Wed Dec 01 2021 07:00:00 GMT+0700 (Indochina Time) <br><br>
+                        End Date Time : Invalid Date <br><br>
+                        Color: #F00000
+                    </span>
+                </span>
+
+
+                <span class="even" style="background-color: gold;">Kitty
+                
+                    <span class="show-content" style="background-color: gold;">
+                        Title : Birthday Party <br><br>
+                        Sub Title : Co-worker <br><br>
+                        Start DateTime : Wed Dec 01 2021 07:00:00 GMT+0700 (Indochina Time) <br><br>
+                        End Date Time : Invalid Date <br><br>
+                        Color: #F00000
+                    </span>
+                </span>
+            </div> 
+        </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

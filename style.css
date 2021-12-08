@@ -1,0 +1,468 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+.myWidth{
+    width: 1400px;
+}
+.weekdays{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;    
+}
+.weekdays div{
+    width: calc(100% / 7);
+    height: 50px;
+    font-size: 20px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafafa;
+    text-shadow: 0px 0px 5px #dddddd;
+    border: 1px solid #eeeeee;
+}
+.alldays{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.alldays .days{
+    position: relative;
+    border: 1px solid #eeeeee;
+    width: calc(100% / 7);
+    box-sizing: border-box;
+    height: calc(1400px / 7);
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.days:hover{
+    background-color: #fcf8e3;
+
+}
+.date{
+    width: 100%;
+}
+.even{
+    width: 90%;
+}
+.alldays .days span.date{
+    display: flex;
+    justify-content: right;
+    padding: 10px;
+    /* margin-bottom: 10px; */
+    font-size: 22px;
+    font-weight: 300;
+}
+/* text-white font-black text-center */
+.alldays .days span.even{
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    margin: 0 auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    border: 0px solid black;
+    background-color: #e7eff5;
+    border-radius: 10px;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    height: 40px;
+}
+.alldays .days span.even:last-child{
+    margin-bottom: 7px;
+}
+.today{
+    background-color: #fcf8e3;
+}
+.prev-date, .next-date{
+    color: #bebebf;
+}
+.hero-event{
+    position: absolute; 
+    top: 40%;
+    left: 5%;
+    width: 90%;
+    height: 40px;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 0px solid black;
+    background-color: #e7eff5;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+#your-event{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+#btn-show{
+    background-color: transparent;
+    transition: 0.5s;
+}
+#btn-show i#dropDown{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+.hero-event:hover #btn-show i#dropDown{
+    color: red;
+    transform: rotate(90deg)
+}
+.show{
+    display: block;
+    position: absolute;
+    /* bottom: -85px; */
+    bottom: -305px;
+    padding: 7px 5px;
+    left: 0px;
+    width: 100%;
+    height: 300px;
+    visibility: hidden;
+    z-index: 3;
+    opacity: 0;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+.hero-event:hover:hover span.show{
+    background-color: #e7eff5;
+    visibility: visible;
+    opacity: 1;
+}
+.show-event{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 10px;
+    /* background-color: #92e0dc; */
+    padding: 8px 0;
+    
+}
+#titleEvent{
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    padding-left: 7px;
+    width: 180px;
+    text-align: left;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+}
+i#showRight{
+    /* border: 1px solid black; */
+    margin-right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    font-size: 18px;
+    padding-left: 2px;
+    transform: rotate(90deg);
+    transition: 0.3s;
+}
+
+.show-content{
+    position: absolute;
+    top: 0%;
+    right: -205% ;
+    width: 200%;
+    height: 300px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 15px;
+    color: white;
+    z-index: 10000 !important;
+    text-align: justify;
+    cursor:text;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.1s ease;
+}
+.show-event:hover i#showRight{
+    color: greenyellow;
+    transform: rotate(0deg);
+}
+.show-event:hover .show-content{
+    visibility:visible;
+    opacity: 1;
+}
+
+.even .show-content{
+    right: -201%;
+}
+.even:hover .show-content{
+    visibility: visible;
+    opacity: 1;
+}
+
+@media only screen and (max-width: 1400px) {
+    
+    .myWidth{
+        width: 1000px;
+    }
+    .weekdays div{
+        font-size: 15px;
+    }
+    .alldays .days{
+        height: calc(1000px / 7);
+        row-gap: 3px;
+    }
+    .alldays .days span.date{
+        padding: 0px 10px;
+    }
+    .alldays .days span.even{
+        font-size: 9px;
+        height: 30px;
+    }
+    .alldays .days span.even:last-child{
+        margin-bottom: 2px  ;
+    }
+    #titleEvent{
+        font-size: 9px;
+    }
+
+    #titleEvent span{
+        font-size: 10px;
+    }
+    .show-content{
+        font-size: 10px;
+    }
+
+  }
+
+  @media only screen and (max-width: 1000px){
+    .myWidth{
+        width: 700px;
+    }
+    #month, #year{
+        font-size: 20px;
+    }
+    #left, #right{
+        width: 2rem;
+        height: 2rem;
+    }
+
+    #today, #btn-week, #btn-month, #btn-day{
+        height: 2rem;
+        font-size: 12px;
+    }
+    
+    .weekdays div{
+        font-size: 10px;
+        height: 30px;
+    }
+    .alldays .days{
+        height: calc(800px / 7);
+        row-gap: 4px;
+    }
+    .alldays .days span:first-child{
+        font-size: 10px;
+        padding: 0px 5px;
+        margin-bottom: 5px;
+    }
+    .alldays .days span.even{
+        font-size: 7px;
+        padding: 2px;
+        margin-top: 0px;
+        height: 25px;
+        padding-left: 8px;
+    }
+    .alldays .days span.even .show-content{
+        right: -216%;
+        width: 214%;
+        padding: 14px;
+    }
+    #your-event{
+        font-size: 11px;
+        margin-right: 3px;
+    }
+
+    #btn-show i#dropDown{
+        font-size: 10px;
+        margin-right: 1px;
+        padding: 0px;
+    }
+    .show-event:hover i#showRight {
+        font-size: 14px;
+    }
+    .show{
+        width: 200%;
+        left: -50%;
+        padding: 10px 10px;
+    }
+    i#showRight{
+        font-size: 12px;
+    }
+    .show-event{
+        padding: 10px 5px;
+        height: 35px;
+    }
+    #titleEvent{
+        font-size: 11px;
+    }
+    .hero-event{
+        padding: 0 6px;
+    }
+    .show-content {
+        right: -145%;
+        width: 142%;
+        height: 177px;
+        font-size: 9px;
+    }
+  }
+
+  @media only screen and (max-width: 700px)
+  {
+    .myWidth{
+        width: 600px;
+    }
+    .head{
+        padding: 5px 10px;
+    }
+    #month, #year{
+        font-size: 15px;
+    }
+    #left, #right{
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 12px;
+    }
+    #month, #year{
+        font-size: 14px;
+    }
+
+    #today, #btn-week, #btn-month, #btn-day{
+        height: 1.5rem;
+        width: 2.2rem;
+        font-size: 10px;
+    }
+    #btn-week, #btn-month, #btn-day{
+        font-size: 9px;
+    }
+    
+    .weekdays div{
+        font-size: 8px;
+        height: 23px;
+    }
+    .alldays .days{
+        height: calc(600px / 7);
+        row-gap: 1px;
+    }
+    .alldays .days span:first-child{
+        font-size: 8px;
+        padding: 0px 5px;
+        margin-bottom: 5px;
+    }
+    .alldays .days span.even{
+        font-size: 6px;
+        padding-left: 7px;
+        margin-top: 0px;
+        height: 20px;
+    }
+    .alldays .days span.even .show-content{
+        font-size: 6px;
+    }
+    .hero-event {
+        top: 30%;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #your-event{
+        font-size: 9px;
+    }
+    #btn-show{
+        padding-top: 2px;
+    }
+    #btn-show i#dropDown {
+        font-size: 10px;
+    }
+    .show{
+        width: 227%;
+        left: -63%;
+    }
+    #titleEvent{
+        font-size: 8px;
+    }
+    .show-content{
+        font-size: 8px;
+    }
+  }
+
+  @media only screen and (max-width: 450px){
+
+    .myWidth{
+        width: 370px;   
+    }
+    .head{
+        padding: 4px 8px;
+    }
+    #month, #year{
+        font-size: 15px;
+    }
+    #left, #right{
+        width: 1.2rem;
+        height: 1.2rem;
+        font-size: 12px;
+    }
+    #month, #year{
+        font-size: 12px;
+    }
+
+    #today, #btn-week, #btn-month, #btn-day{
+        height: 1.2rem;
+        width: 2.2rem;
+        font-size: 8px;
+    }
+    #btn-week, #btn-month, #btn-day{
+        font-size: 9px;
+    }
+    .alldays .days{
+        height: calc(550px / 7);
+        row-gap: 1px;
+    }
+    .alldays .days span.even{
+        font-size: 4px;
+        padding-left: 4px;
+        margin-top: 0px;
+        height: 19px;
+    }
+    #your-event{
+        font-size: 7px;
+    }
+    #btn-show{
+        padding-top: 4px;
+    }
+    .show{
+        width: 281%;
+        left: -91%;
+    }
+    #titleEvent{
+        font-size: 8px;
+    }
+    .show-content{
+        font-size: 8px;
+    }
+    #btn-show i#dropDown {
+        font-size: 10px;
+        padding: 5px 0px;
+    }
+  }
